@@ -12,7 +12,7 @@ app.use(express.json());
 //get all episodes
 app.get('/episode', async (req, res) => {
   try {
-    const allEpisodes = await pool.query("SELECT * FROM content");
+    const allEpisodes = await pool.query("SELECT * FROM card");
     res.json(allEpisodes.rows);
   } catch (err) {
     console.error(err.message);
@@ -26,7 +26,7 @@ app.get('/episode/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const episodeContent = await pool.query(
-      "SELECT * FROM content WHERE id = $1", [
+      "SELECT * FROM card WHERE id = $1", [
       id
     ]);
 
@@ -35,6 +35,22 @@ app.get('/episode/:id', async (req, res) => {
     console.error(err.message)
   }
 });
+
+app.get('/episode/:id/playlist', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const episodeContent = await pool.query(
+      "SELECT * FROM playlist WHERE episode = $1", [
+      id
+    ]);
+
+    res.json(episodeContent.rows)
+  } catch (err) {
+    console.error(err.message)
+  }
+});
+
+
 
 
 app.listen(5000, () => {
