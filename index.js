@@ -12,7 +12,7 @@ app.use(express.json());
 //get all episodes
 app.get('/episode', async (req, res) => {
   try {
-    const allEpisodes = await pool.query("SELECT * FROM card");
+    const allEpisodes = await pool.query("SELECT * FROM card ORDER BY id DESC");
     res.json(allEpisodes.rows);
   } catch (err) {
     console.error(err.message);
