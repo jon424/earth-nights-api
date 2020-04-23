@@ -37,3 +37,9 @@ INSERT INTO playlist (episode, name, artist, url, cover, lrc, theme, album, post
 );
 
 -- <div><p>This is THE SECOND episode...</p></div>'
+
+INSERT INTO playlist (episode, name, artist, url, cover, lrc, theme, album, post_title, post_content1, post_content2, post_content3) VALUES (2, 'The First Song of Episode 2', 'The Peepz', 'https://dl.dropbox.com/s/os8v0ymru1433nn/2%20mix.wav', 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSIf0dTz1bIeqbJc1TO59ql7K6AdtbpN6_ZScVsR_heOen0Yaxw&usqp=CAU', '', '#46718b', 'Music From The Castle', 'Welcom to Episode Two!', 'This is today''s episode...', '...today is whenever you are currently listening...', '...Thanks so much for being here...'
+);
+
+INSERT INTO playlist (episode, name, artist, url, cover, lrc, theme, album, post_title, post_content1, post_content2, post_content3) VALUES (2, 'R', 'The Lips', 'https://dl.dropbox.com/s/os8v0ymru1433nn/2%20mix.wav', 'https://cdn.technologynetworks.com/tn/images/thumbs/jpeg/640_360/can-psychedelic-drugs-heal-307439.jpg', '', '#46718b', 'Tin', null, null, null, null
+);
