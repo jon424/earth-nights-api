@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const pool = require('./db');
+const PORT = process.env.PORT || 5000
 
 //middleware
 app.use(cors());
@@ -53,6 +54,6 @@ app.get('/episode/:id/playlist', async (req, res) => {
 
 
 
-app.listen(5000, () => {
-  console.log('server has started on port 5000');
+app.listen(PORT, () => {
+  console.log('server has started on http://localhost:${PORT}');
 });
